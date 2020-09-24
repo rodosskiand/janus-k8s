@@ -1,0 +1,50 @@
+#
+# File automatically generated on Wed Sep 23 09:26:59 2020
+#
+
+general :
+{
+  admin_key = "secretdev";
+};
+room-1001 :
+{
+  description = "Personal Room";
+  secret = "adminpwd";
+  publishers = "6";
+  bitrate = "524288";
+  fir_freq = "10";
+  record = "false";
+};
+room-1234 :
+{
+  description = "Demo Room";
+  secret = "adminpwd";
+  publishers = "6";
+  bitrate = "128000";
+  fir_freq = "10";
+  record = "false";
+};
+room-5678 :
+{
+  description = "VP9-SVC Demo Room";
+  secret = "adminpwd";
+  publishers = "6";
+  bitrate = "512000";
+  fir_freq = "10";
+  videocodec = "vp9";
+  video_svc = "true";
+};
+room-12345 :
+{
+  description = "new test description for video room";
+  bitrate = "0";
+  publishers = "3";
+  audiocodec = "opus";
+  videocodec = "vp8";
+  secret = "adminpwd";
+  audiolevel_ext = "yes";
+  videoorient_ext = "yes";
+  playoutdelay_ext = "yes";
+  transport_wide_cc_ext = "yes";
+  notify_joining = "yes";
+};

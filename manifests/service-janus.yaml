@@ -1,0 +1,95 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: janus
+  labels:
+    app: janus
+spec:
+  type: NodePort
+  sessionAffinity: ClientIP
+  sessionAffinityConfig: 
+    clientIP:
+      timeoutSeconds: 25
+  externalTrafficPolicy: Cluster
+  ports:
+    - port: 8088
+      targetPort: janus1
+      protocol: TCP
+      name: janus1
+    - port: 8089
+      targetPort: janus2
+      protocol: TCP
+      name: janus2
+    - port: 8889
+      targetPort: janus3
+      protocol: TCP
+      name: janus3
+    - port: 8000
+      targetPort: janus4
+      protocol: TCP
+      name: janus4
+    - port: 7088
+      targetPort: janus5
+      protocol: TCP
+      name: janus5
+    - port: 8188
+      targetPort: ws
+      protocol: TCP
+      name: ws
+    - port: 30000
+      targetPort: rtp9
+      protocol: UDP
+      name: rtp0
+      nodePort: 30000
+    - port: 30001
+      targetPort: rtp1
+      protocol: UDP
+      name: rtp1
+      nodePort: 30001
+    - port: 30002
+      targetPort: rtp2
+      protocol: UDP
+      name: rtp2
+      nodePort: 30002
+    - port: 30003
+      targetPort: rtp3
+      protocol: UDP
+      name: rtp3
+      nodePort: 30003
+    - port: 30004
+      targetPort: rtp4
+      protocol: UDP
+      name: rtp4
+      nodePort: 30004
+    - port: 30005
+      targetPort: rtp5
+      protocol: UDP
+      name: rtp5
+      nodePort: 30005
+    - port: 30006
+      targetPort: rtp6
+      protocol: UDP
+      name: rtp6
+      nodePort: 30006
+    - port: 30007
+      targetPort: rtp7
+      protocol: UDP
+      name: rtp7
+      nodePort: 30007
+    - port: 30008
+      targetPort: rtp8
+      protocol: UDP
+      name: rtp8
+      nodePort: 30008
+    - port: 30009
+      targetPort: rtp9
+      protocol: UDP
+      name: rtp9
+      nodePort: 30009
+    - port: 30010
+      targetPort: rtp10
+      protocol: UDP
+      name: rtp10
+      nodePort: 30010
+  selector:
+    app: janus

@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: janus
+  labels:
+    app: janus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: janus
+  template:
+    metadata:
+      labels:
+        app: janus
+    spec:
+      containers:
+      - image: apetrosyan/janus:latest
+        imagePullPolicy: Always
+        name: janus
+        ports:
+        - containerPort: 8088
+          name: janus1
+          protocol: TCP
+        - containerPort: 8089
+          name: janus2
+          protocol: TCP
+        - containerPort: 8889
+          name: janus3
+          protocol: TCP
+        - containerPort: 8188
+          name: ws
+          protocol: TCP
+        - containerPort: 7088
+          name: janus5
+          protocol: TCP
+        - containerPort: 30000
+          name: rtp0
+          protocol: UDP
+        - containerPort: 30001
+          name: rtp1
+          protocol: UDP
+        - containerPort: 30002
+          name: rtp2
+          protocol: UDP
+        - containerPort: 30003
+          name: rtp3
+          protocol: UDP
+        - containerPort: 30004
+          name: rtp4
+          protocol: UDP
+        - containerPort: 30005
+          name: rtp5
+          protocol: UDP
+        - containerPort: 30006
+          name: rtp6
+          protocol: UDP
+        - containerPort: 30007
+          name: rtp7
+          protocol: UDP
+        - containerPort: 30008
+          name: rtp8
+          protocol: UDP
+        - containerPort: 30009
+          name: rtp9
+          protocol: UDP
+        - containerPort: 30010
+          name: rtp10
+          protocol: UDP
+        resources: 
+          limits:
+            cpu: 500m
+            memory: 350Mi
+          requests:
+            cpu: 10m
+            memory: 250Mi
